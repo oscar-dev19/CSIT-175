@@ -1,7 +1,8 @@
-    """A simple program that adds/removes/displays list of classes offered.
-       Author: Oscar Lopez
-       Date Last Modified: 3/18/21.
-    """
+"""A simple program that adds/removes/displays list of classes offered.
+   Author: Oscar Lopez
+   Date Last Modified: 3/18/21.
+"""
+
 from asgn4_module import *
 import random
 
@@ -52,8 +53,6 @@ def main():
     
     while(True):
         choice = input('Do you need to Add or Remove a class?(A/R)')
-        if choice.upper() != 'A' or choice.upper() !='R':
-            print("You must choose an 'A' to Add or an 'R' to Remove a class")
         if choice.upper() == 'A':
             while(True):
                 added_class = input('Enter the name of the class you wish to add:')
@@ -69,23 +68,29 @@ def main():
                     else:
                         print(f'{added_class} is already in list of classes offered.')
                         continue
-        
-        if choice.upper() == 'R':
-            removed_class = input('Enter the name of the class you wish to remove:')
-            if is_field_blank(removed_class):
-                print('Please enter a class you want to remove.')
-                continue
-            elif removed_class not in classes_offered:
-                print(f'ERROR: {removed_class} is not in list of classes offered.')
-                continue
-            else:
-                removeClass(removed_class)
-                print(f'{removed_class} has been removed from classes offered list.')
-                break
+        elif choice.upper() == 'R':
+            while(True):
+                removed_class = input('Enter the name of the class you wish to remove:')
+                if is_field_blank(removed_class):
+                    print('Please enter a class you want to remove.')
+                    continue
+                elif removed_class not in classes_offered:
+                    print(f'ERROR: {removed_class} is not in list of classes offered.')
+                    continue
+                else:
+                    removeClass(removed_class)
+                    print(f'{removed_class} has been removed from classes offered list.')
+                    break
+                
         elif is_field_blank(choice):
                 print('\nList Of Classes I Teach:')
                 display_my_classes()
                 break
+        
+        else:
+                print("You must choose an 'A' to Add or an 'R' to Remove a class")
+                continue
+        
     next = guess_next()
     print(f'\nThe next class you should teach is: {next}')
     print('\nEND OF ASSIGNMENT 5')

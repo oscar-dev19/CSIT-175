@@ -3,7 +3,7 @@
    Date Last Modified: 3/18/21.
 """
 
-from asgn4_module import *
+from Assignments.asgn4_module import *
 import random
 
 classes_offered = ["Python", "Javascript", "PHP"]

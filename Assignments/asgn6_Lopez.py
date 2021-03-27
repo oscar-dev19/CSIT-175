@@ -42,12 +42,16 @@ def processPrices(_list_):
         try:
             price = float(temp)
             formattedPrice = '{p:.2f}'.format(p=price)
-            prices.write(formattedPrice + '\n')
+            prices.write(f'{item} have a cost{formattedPrice} dollars \n')
         except(ValueError):
             print(f"You entered an invalid float that could not convert string to float: '{temp}'\n")
             print(f'Skipping to next item after {item}')
+        prices.close()
         
-    
+def display_costs():
+    for line in open('costlist.txt', 'r'):
+        print(line)
+
     
 def main():
     print('Assignment 6\n')
@@ -64,13 +68,14 @@ def main():
             if f_object:
                 processList(f_object)
                 processPrices(items)
+                f_object.close()
                 break
             else:
                 continue
         else:
-            #if file is not items.txt just pass.
             continue
-    print('Program Ended')
+    display_costs()
+    print('Program End')
     exit()
         
         

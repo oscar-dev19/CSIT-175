@@ -66,7 +66,7 @@ def main():
             print('Please enter a name of the file to open. Type end to leave program.')
             continue
         if f_name.upper() == 'END':
-            print('Program now exiting...')
+            print('Program Ended')
             break
         if f_name.upper() == 'ITEMS.TXT':
             f_object = open_file(f_name)
@@ -85,11 +85,12 @@ def main():
             pass
     if os.path.exists('costlist.txt'):
         display_cost()
-    print('Program Ended')
+        print('Program Ended')
     exit()
         
         
 if __name__ == '__main__':
     main()
+    
 
                 

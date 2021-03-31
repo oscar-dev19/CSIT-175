@@ -36,7 +36,7 @@ def processPrices(_list_):
     Args:
         _list_ (list): list of items to set up pricing to.
     """
-    for item in _list_:
+    for item in sorted(_list_):
         prices = open('costlist.txt', 'a')
         temp = input(f'How much should {item} cost: ')
         try:
@@ -62,6 +62,9 @@ def main():
     print("\nAssignment 6\n")
     while(True):
         f_name = input('Please enter a file name to open ')
+        if not f_name:
+            print('Please enter a name of the file to open. Type end to leave program.')
+            continue
         if f_name.upper() == 'END':
             print('Program now exiting...')
             break
@@ -74,6 +77,10 @@ def main():
             else:
                 continue
         else:
+            #check if file exists.
+            f = open_file(f_name)
+            if not f:
+                print('Please Try Again')
             #if file is not items.txt just pass.
             pass
     if os.path.exists('costlist.txt'):

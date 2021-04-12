@@ -11,6 +11,7 @@ def payMe():
         return False
 
 def getTarget(question):
+    q_words = question.split()
     key_words = ['WHO', 'WHAT', 'WHERE', 'WHEN', 'WHY', 'HOW']
     if key_words.__contains__(q_words[0].upper()):
         return q_words[0]

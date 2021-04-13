@@ -28,6 +28,7 @@ def main():
         print(f'Attention {name.title()} The Wizard declares: {wizard_message}')
         response = input( "Do you have another question? Y/N: ")
         if response == 'y' or response == 'Y':
+            print("What's your question? Who are you?")
             continue
         elif response == 'n' or response == 'N':
             break

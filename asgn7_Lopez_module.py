@@ -5,7 +5,7 @@ def payMe():
     print("What is the most you are willing to pay for my advice?\n")
     print("The more you pay, the better the answer! (minimum price: $975.46)\n")
     amount = input()
-    if float(amount) > 975.46:
+    if float(amount) >= 975.46:
         print(f'I guess {amount} seems like a fair price')
         return True
     else:

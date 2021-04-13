@@ -19,6 +19,10 @@ def main():
         break
     t = getTarget(question)
     list_ = createList(t)
+    input('Press Enter to Spin the Wheel.')
+    answer = spinTheWheel(name,list_)
+    print("Spin..Spin..Spin....Spin.......Spin........tick, tick, tick, stop\n")
+    print(answer)
     
 
 if __name__ == '__main__':

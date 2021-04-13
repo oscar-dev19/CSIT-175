@@ -1,4 +1,4 @@
-import time
+import datetime
 
 def payMe():
     print("What is the most you are willing to pay for my advice?\n")
@@ -34,14 +34,15 @@ def createList(targetWord):
             
     return display_list
 
-def spinTheWheel(username, list):
+def spinTheWheel(name, list_):
     remainder = 0
-    num_elements = len(list)
+    num_elements = len(list_)
     
     if num_elements >0:
-        t = time.time()
-        remainder = num_elements%t
-    return list[remainder]
+        t = datetime.datetime.now().second
+        remainder = t%num_elements
+        print(remainder)
+    return list_[remainder]
         
     
     

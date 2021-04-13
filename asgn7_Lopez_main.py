@@ -1,5 +1,8 @@
 from asgn7_Lopez_module import *
 
+
+
+
 def main():
     print("**The Wizard**\n")
     print("The Wizard will see you now")
@@ -16,15 +19,23 @@ def main():
         if not question:
             print(f'{name.title()} please dont be shy.')
             continue
-        break
-    t = getTarget(question)
-    list_ = createList(t)
-    input('Press Enter to Spin the Wheel.')
-    answer = spinTheWheel(name,list_)
-    print("Spin..Spin..Spin....Spin.......Spin........tick, tick, tick, stop\n")
-    print(answer)
+        
+        t = getTarget(question)
+        list_ = createList(t)
+        input('Press Enter to Spin the Wheel.')
+        wizard_message = spinTheWheel(name,list_)
+        print("Spin..Spin..Spin....Spin.......Spin........tick, tick, tick, stop\n")
+        print(f'Attention {name.title()} The Wizard declares: {wizard_message}')
+        response = input( "Do you have another question? Y/N: ")
+        if response == 'y' or response == 'Y':
+            continue
+        elif response == 'n' or response == 'N':
+            break
+    print(declareDate()+ ' The Wizard wants you to go away now!')
     
 
 if __name__ == '__main__':
     main()
+    
+    
     

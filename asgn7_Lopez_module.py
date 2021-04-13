@@ -1,4 +1,5 @@
-import datetime
+import datetime 
+import calendar
 
 def payMe():
     print("What is the most you are willing to pay for my advice?\n")
@@ -43,6 +44,15 @@ def spinTheWheel(name, list_):
         remainder = t%num_elements
         print(remainder)
     return list_[remainder]
+
+def declareDate():
+    date = datetime.datetime.now()
+    day = date.day
+    month = calendar.month_name[date.month]
+    year = date.year
+    
+    decleration =f'On this day the {day} in the month of {month} in the year of {year}'
+    return decleration
         
     
     

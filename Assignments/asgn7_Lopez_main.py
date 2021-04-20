@@ -1,8 +1,5 @@
 from asgn7_Lopez_module import *
 
-
-
-
 def main():
     print("**The Wizard**\n")
     print("The Wizard will see you now")
@@ -32,11 +29,9 @@ def main():
             continue
         elif response == 'n' or response == 'N':
             break
-    print(declareDate()+ ' The Wizard wants you to go away now!')
+            
+    print(declareDate()+ ' \nThe Wizard wants you to go away now!')
     
 
 if __name__ == '__main__':
     main()
-    
-    
-    

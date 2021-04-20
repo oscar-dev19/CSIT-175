@@ -5,8 +5,9 @@ def payMe():
     print("What is the most you are willing to pay for my advice?\n")
     print("The more you pay, the better the answer! (minimum price: $975.46)\n")
     amount = input()
+    
     if float(amount) >= 975.46:
-        print(f'I guess {amount} seems like a fair price')
+        print(f'I guess ${amount} seems like a fair price')
         return True
     else:
         return False
@@ -50,13 +51,6 @@ def declareDate():
     day = date.day
     month = calendar.month_name[date.month]
     year = date.year
-    
     decleration =f'On this day the {day} in the month of {month} in the year of {year}'
     return decleration
-        
-    
-    
             
-        
-        
-    

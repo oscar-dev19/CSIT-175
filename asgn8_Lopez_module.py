@@ -34,6 +34,14 @@ def findName(data,firstName) -> str:
     return fullname
 
 def displaySortedNames(data) -> str:
+    """Displays names from dataset sorted alphabetically by first name.
+
+    Args:
+        data (dict): dictionary of names
+
+    Returns:
+        str: Formatted string as a sorted list of names from data.
+    """
     sorted_first_names = sorted(data.keys())
     name_list = ''
     for f in sorted_first_names:

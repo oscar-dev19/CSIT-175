@@ -2,12 +2,14 @@ from asgn9_Lopez_module import *
 from random import randrange
 
 
-def drive(car,currentscore):
+def drive(car, currentScore):
     r = randrange(1,5)
-    new_score = currentscore + r
-    d = car.showLine() * new_score
-    print(f'{car.getColor()}:{d}({new_score})>')
-    return new_score
+    newScore = currentScore
+    newScore += r
+    distance = car.showLine()* newScore
+    print(f'{car.getColor()}{distance}>({newScore})')
+    return r
+
 
 def main():
     race(50)
@@ -27,14 +29,14 @@ def race(goal):
     while True:
         winner = None
         playerScore += drive(myCar,playerScore)
-        computerScore += drive(computerCar,computerScore)
+        computerScore += drive(computerCar, computerScore)
         if playerScore >= goal:
             winner = 'You'
-            print(f'Winner is {winner}')
+            print(f'{winner} are the winner!')
             break
         elif computerScore >= goal:
             winner = 'Computer'
-            print(f'Winner is {winner}')
+            print(f'Winner is the {winner}!')
             break
         response = input("Drive some more? (y/n): ")
         if response.lower() == 'n':

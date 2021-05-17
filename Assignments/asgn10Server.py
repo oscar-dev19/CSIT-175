@@ -40,20 +40,15 @@ def start_server(host=HOST,port=PORT):
                 print(f'from connected user: {message.decode()}')
                 invalid_word = contains_invalid_words(message.decode())
                 if invalid_word:
-                    invalid_response = f'{invalid_word} IS AN INVALID WORD!'
-                    conn.send(f'{invalid_response}'.encode())
-                    print(f'sending: {invalid_response}')
+                    conn.send(f'Received from server: {invalid_word} IS AN INVALID WORD!'.encode())
                     continue
                 else:
-                    valid_response =f'VALID: {message.decode()}'
-                    print(f'sending: {valid_response}')
-                    conn.send(valid_response.encode())
+                    conn.send(f'Received from server: VALID: {message.decode()}'.encode())
                     continue
         else:
             conn.send('INVALID USER NAME!\nENDING PROGRAM'.encode())
-            break 
+            break
     conn.close()
-    
             
                                 
 def main():

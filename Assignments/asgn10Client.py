@@ -17,8 +17,9 @@ with client_socket:
             break
         client_socket.sendall(message.encode())
         message_response = client_socket.recv(1024).decode()
-        print(f'Received from server:{message_response}')
+        print(message_response)
     client_socket.close()
+client_socket.close()
     
     
         
